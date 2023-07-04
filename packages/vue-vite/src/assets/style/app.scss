@@ -1,0 +1,10 @@
+.flex {
+  display: flex;
+  gap: 16px;
+  > div {
+    flex: 1
+  }
+}
+.m-b-16 {
+  margin-bottom: 16px;
+}
