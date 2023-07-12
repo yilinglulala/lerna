@@ -1,9 +1,9 @@
-// import get from 'lodash/get' 这种方式也可以
-let { get } = require('lodash');
-// import _ from 'lodash/index'
+// import get from 'lodash/get' //这种方式也可以
+// let { get } = require('lodash');
+import { get } from 'lodash'
+// const get = ()=>{}
 
 class CONSTANT {
-
   source = {}
 
   constructor(source) {
@@ -15,7 +15,7 @@ class CONSTANT {
     return path && get(this.source, [...path.split('.'), key], defaultValue)
   }
 
-  getFilter(path, textKey="text") {
+  getFilter(path, textKey = 'text') {
     const data = get(this.source, path, {})
     return Object.entries(data).map(([value, text]) => {
       // 支持数字、boolean类型
@@ -25,7 +25,9 @@ class CONSTANT {
       return { [textKey]: text, value }
     })
   }
-  
 }
-
-module.exports = CONSTANT
+// if (type module !== 'undefinded' && module.exports) {
+//   module.exports = CONSTANT
+//   module.exports.default = CONSTANT
+// }
+export default CONSTANT

@@ -1,6 +1,10 @@
+
 <script setup lang="ts">
+// import topNav from '../components/HelloWorld.vue'
+import topNav from './layout/topNav.vue'
 </script>
 
 <template>
-  <router-link to="/i18n">i18n</router-link>
+  <top-nav/>
+  <router-view/>
 </template>

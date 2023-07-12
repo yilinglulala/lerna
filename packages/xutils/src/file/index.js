@@ -1,14 +1,13 @@
-// import * as XLSX from 'xlsx'
-const XLSX = require('xlsx')
-
-// /**
-//  * json 转 excel
-//  * @param name excel 文件名
-//  *
-//  */
+import * as XLSX from 'xlsx'
+/**
+ * json 转 excel
+ * @param jsonData json数据 [{[string]: any}]
+ * @param filename excel 文件名
+ *
+ */
 const jsonToExcel = (
   jsonData = [],
-  { filename = 'data', sheetName = 'Sheet1' },
+   filename = 'data', sheetName = 'Sheet1' 
 ) => {
   if (!jsonData.length) {
     console.log('导出数据为空')
@@ -30,6 +29,25 @@ const jsonToExcel = (
   link.click()
 }
 
-module.exports = {
+/**
+ * File 对象转 text
+ * @param file File对象
+ * @return Promise<(str)=>{}>
+ */
+const fileToText = (file) => {
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader()
+    reader.onload = () => {
+      resolve(reader.result)
+    }
+    reader.onerror = () => {
+      reject(reader.error)
+    }
+    reader.readAsText(file)
+  })
+}
+
+export default {
   jsonToExcel,
+  fileToText,
 }

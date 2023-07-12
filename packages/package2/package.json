@@ -17,6 +17,7 @@
     "registry": "https://registry.npmmirror.com/"
   },
   "scripts": {
-    "test": "node ./__tests__/package2.test.js"
+    "test": "node ./__tests__/package2.test.js",
+    "dev": "node ./lib/package2.js"
   }
 }

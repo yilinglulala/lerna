@@ -1,11 +1,12 @@
 {
-  "name": "utils",
+  "name": "xutils",
   "version": "1.0.0",
   "description": "> TODO: description",
   "author": "xuyil",
   "homepage": "",
   "license": "ISC",
-  "main": "lib/utils.js",
+  "main": "index.js",
+  "module": "index.js",
   "directories": {
     "lib": "lib",
     "test": "__tests__"
@@ -21,6 +22,8 @@
     "test": "node ./__tests__/utils.test.js"
   },
   "dependencies": {
+    "lodash": "^4.17.21",
+    "lodash-es": "^4.17.21",
     "xlsx": "^0.18.5"
   }
 }

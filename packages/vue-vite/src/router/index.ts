@@ -1,8 +1,15 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
 // import Nav from '../views/nav.vue'
 const routes = [
-  { path: '/', component: ()=>import('../views/nav.vue') },
-  { path: '/i18n', component: ()=>import('../views/smallTool/i18n.vue') }
+  {
+    path: '/',
+    component: () => import('../views/nav.vue'),
+    redirect: '/i18n',
+    children: [
+      { path: '/i18n', component: () => import('../views/smallTool/i18n.vue') },
+      { path: '/tablecan', component: () => import('../views/smallTool/tableCan/index.vue') },
+    ],
+  },
 ]
 
 const router = createRouter({
@@ -11,4 +18,3 @@ const router = createRouter({
   routes, // `routes: routes` 的缩写
 })
 export default router
-
