@@ -6,8 +6,21 @@ const routes = [
     component: () => import('../views/nav.vue'),
     redirect: '/i18n',
     children: [
-      { path: '/i18n', component: () => import('../views/smallTool/i18n.vue') },
-      { path: '/tablecan', component: () => import('../views/smallTool/tableCan/index.vue') },
+      {
+        path: '/i18n',
+        name: 'i18n',
+        component: () => import('../views/smallTool/i18n.vue'),
+      },
+      {
+        path: '/tablecan',
+        name: 'tableCan',
+        component: () => import('../views/smallTool/tableCan/index.vue'),
+      },
+      {
+        path: '/pdf',
+        name: 'pdf',
+        component: () => import('../views/smallTool/pdf/index.vue'),
+      },
     ],
   },
 ]

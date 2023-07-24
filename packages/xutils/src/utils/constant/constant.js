@@ -1,8 +1,4 @@
-// import get from 'lodash/get' //这种方式也可以
-// let { get } = require('lodash');
 import { get } from 'lodash'
-// const get = ()=>{}
-
 class CONSTANT {
   source = {}
 
@@ -26,8 +22,4 @@ class CONSTANT {
     })
   }
 }
-// if (type module !== 'undefinded' && module.exports) {
-//   module.exports = CONSTANT
-//   module.exports.default = CONSTANT
-// }
 export default CONSTANT

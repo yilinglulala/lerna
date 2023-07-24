@@ -1,6 +1,7 @@
 <template>
   <div>
-    <div class="flex m-b-16">
+    <el-link type="primary" class="m-4" href="https://cloud-internet.yealinkops.com/#/i18n/index" target="_blank">国际化平台</el-link>
+    <div class="flex m-4">
       <div>
         <el-input
           id="source"
@@ -8,6 +9,7 @@
           rows="20"
           placeholder="vue 或者js 文件"
           type="textarea"
+          class="mb-2"
         ></el-input>
         <el-button @click="clearSourceContent">清空</el-button>
       </div>
@@ -18,6 +20,7 @@
           type="textarea"
           placeholder="i18nkeys,从excel 复制过来"
           suffix-icon="el-icon-date"
+          class="mb-2"
         ></el-input>
         <el-button @click="transformFromExcel">提取key</el-button>
       </div>
@@ -27,8 +30,10 @@
           rows="20"
           type="textarea"
           placeholder="预览excel数据"
+          class="mb-2"
         ></el-input>
         <el-button @click="preview">预览</el-button>
+        <!-- <el-button @click="handleCopy3">复制</el-button> -->
       </div>
 
       <!-- <div>
@@ -54,39 +59,31 @@ import xutils from 'xutils'
 import { get } from 'lodash'
 import zhjs from './lang/zh.js'
 import enjs from './lang/en.js'
-const sourceContent = ref(`tabList = [
-    {
-      label: this.$t("@i18n.sms.settings.duanxinshe"),
-      label: this.$t('@i18n.sms.settings.duanxinshe1'),
-    },
-    $t('@i18n.sms.settings.duanxinshe2'),
-  ];`)
+
+import { ElMessage } from 'element-plus'
+
+const sourceContent = ref('')
 // 清空
 const clearSourceContent = () => {
   sourceContent.value = ''
   document.getElementById('source').focus()
 }
 const i18nkeys = ref('')
-
-const en = ref(`
-{
-"@i18n.sms.settings.duanxinshe": "en111",
-}`)
+const en = ref('')
 const result = ref('')
 const keyArr = reactive(new Set())
 const resArr = reactive(new Set())
+
 const transform = () => {
   const str = sourceContent.value
   const regex = /(this\.)?\$t\((("([^"]+)")|('([^']+)'))\)/g
   let match
   while ((match = regex.exec(str)) !== null) {
-    // debugger
     keyArr.add(match[6] || match[4])
     resArr.add(`${match[1] ? match[1] : ''}$t("${match[4]}")`)
   }
   console.log([...keyArr])
 }
-console.log(222, xutils.file.jsonToExcel)
 const transformFromExcel = () => {
   keyArr.clear()
   i18nkeys.value.split('\n').forEach((v) => {
@@ -104,17 +101,15 @@ const handleChange = (uploadFile, uploadFiles) => {
   })
 }
 const creJsonData = () => {
-  const jsonData: any = [
-    // { name: 'Alice', age: 25 },
-  ]
-
+  const jsonData: Array<any> = []
   ;[...keyArr].forEach((key) => {
-    console.log(key, enjs[key])
-    jsonData.push({
-      key,
-      zh: zhjs[key],
-      en: enjs[key],
-    })
+    if (key && zhjs[key]) {
+      jsonData.push({
+        key,
+        zh: zhjs[key],
+        en: enjs[key],
+      })
+    }
   })
   return jsonData
 }
@@ -125,12 +120,30 @@ const toExcel = () => {
 // 预览
 const previewData = ref('')
 const preview = () => {
+  if (!keyArr.size) {
+    ElMessage({
+      message: '请先提取key',
+      type: 'warning',
+    })
+    return
+  }
   previewData.value = creJsonData()
     .map((v) => {
       return `${v.key}\t${v.zh}\t${v.en}\n`
     })
     .join('') // JSON.stringify(creJsonData(),undefined,4)
+  handleCopy3()
 }
+const handleCopy3 = () => {
+  if (previewData.value) {
+    xutils.copyText(previewData.value)
+    ElMessage({
+      message: '复制成功',
+      type: 'success',
+    })
+  }
+}
+
 function readFile(file) {
   return new Promise((resolve, reject) => {
     const reader = new FileReader()
@@ -143,7 +156,4 @@ function readFile(file) {
     reader.readAsText(file)
   })
 }
-// todo
-// File 转字符串
 </script>
-
