@@ -12,6 +12,11 @@ const routes = [
         component: () => import('../views/smallTool/i18n.vue'),
       },
       {
+        path: '/moment',
+        name: 'moment',
+        component: () => import('../views/smallTool/moment/index.vue'),
+      },
+      {
         path: '/tablecan',
         name: 'tableCan',
         component: () => import('../views/smallTool/tableCan/index.vue'),

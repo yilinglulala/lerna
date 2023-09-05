@@ -1,8 +1,19 @@
 <template>
   <div>
-    <el-link type="primary" class="m-4" href="https://cloud-internet.yealinkops.com/#/i18n/index" target="_blank">国际化平台</el-link>
+    <el-link
+      type="primary"
+      class="m-4"
+      href="https://cloud-internet.yealinkops.com/#/i18n/index"
+      target="_blank"
+    >
+      国际化平台
+    </el-link>
     <div class="flex m-4">
       <div>
+        <!-- <el-radio-group v-model="radio1" class="ml-4">
+          <el-radio label="vue" size="large">vue</el-radio>
+          <el-radio label="zh.js" size="large">zhjs</el-radio>
+        </el-radio-group> -->
         <el-input
           id="source"
           v-model="sourceContent"
@@ -12,6 +23,7 @@
           class="mb-2"
         ></el-input>
         <el-button @click="clearSourceContent">清空</el-button>
+        <el-button @click="transfromZhjs">zhjs</el-button>
       </div>
       <div>
         <el-input
@@ -73,6 +85,7 @@ const en = ref('')
 const result = ref('')
 const keyArr = reactive(new Set())
 const resArr = reactive(new Set())
+const radio1 = ref('vue')
 
 const transform = () => {
   const str = sourceContent.value
@@ -84,15 +97,25 @@ const transform = () => {
   }
   console.log([...keyArr])
 }
+
+const transfromZhjs = (data)=> {
+  const str = sourceContent.value
+  const regex = /(@i18n\.[^"]+)/g
+  let match
+  while ((match = regex.exec(str)) !== null) {
+    keyArr.add(match[0])
+    // resArr.add(`${match[1] ? match[1] : ''}$t("${match[4]}")`)
+  }
+}
 const transformFromExcel = () => {
   keyArr.clear()
   i18nkeys.value.split('\n').forEach((v) => {
-    keyArr.add(v)
+    keyArr.add(v.trim())
   })
 }
 const fileList = ref<any[]>([])
 const handleChange = (uploadFile, uploadFiles) => {
-  readFile(uploadFile.raw).then((data) => {
+  readFile(uploadFile.raw).then((data: string) => {
     let str = data
       .replace(/export\s+default/, '')
       .replace(/[(\n)(\r)]/g, '')
