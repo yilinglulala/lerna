@@ -1,3 +1,6 @@
+/**
+ * new CONSTANT(source)
+ */
 import { get } from 'lodash'
 class CONSTANT {
   source = {}
