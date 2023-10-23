@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    input {
+      width: 480px;
+      height: 32px;
+      line-height: 32px;
+      border-color: #C0C4CC;
+    }
+  </style>
+  <script src="https://cdn.bootcdn.net/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+  <body>
+    应用凭证解密
+    <input autofocus type="text" id="a" clearable placeholder="亲~ 请输入解密文本哦"/>
+    <button onclick="decrypt()">点我解密哦</button>
+    <input type="text" id="b" readonly placeholder="亲~ 这是一个只读文本框哦"/>
+  </body>
+  <script>
+    const aesdecrypt = function (input, key = 'FrontYealink2020') {
+      const result = CryptoJS.AES.decrypt(input, CryptoJS.enc.Utf8.parse(key), {
+        mode: CryptoJS.mode.ECB,
+        padding: CryptoJS.pad.Pkcs7,
+      })
+      return result.toString(CryptoJS.enc.Utf8)
+    }
+    
+    function decrypt() {
+      let key = CryptoJS.MD5('Yealink1105!').toString()
+      b.value = aesdecrypt(a.value, key.slice(0, 16))
+      if (b.value) {
+        navigator.clipboard.writeText(b.value)
+        alert('小帆帆~复制成功了哦')
+      }
+    }
+  </script>
+</html>

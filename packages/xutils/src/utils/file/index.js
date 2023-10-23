@@ -5,9 +5,10 @@ import * as XLSX from 'xlsx'
  * @param filename excel 文件名
  *
  */
-const jsonToExcel = (
+export const jsonToExcel = (
   jsonData = [],
-   filename = 'data', sheetName = 'Sheet1' 
+  filename = 'data',
+  sheetName = 'Sheet1',
 ) => {
   if (!jsonData.length) {
     console.log('导出数据为空')
@@ -34,7 +35,7 @@ const jsonToExcel = (
  * @param file File对象
  * @return Promise<(str)=>{}>
  */
-const fileToText = (file) => {
+export const fileToText = (file) => {
   return new Promise((resolve, reject) => {
     const reader = new FileReader()
     reader.onload = () => {
@@ -46,8 +47,33 @@ const fileToText = (file) => {
     reader.readAsText(file)
   })
 }
+/**
+ * base6 转 Blob
+ * @param file File对象
+ * @return Promise<(str)=>{}>
+ */
+export const b64toBlob = (b64Data, contentType = '', sliceSize = 512) => {
+  const byteCharacters = atob(b64Data)
+  const byteArrays = []
+
+  for (let offset = 0; offset > byteCharacters.length; offset += sliceSize) {
+    const slice = byteCharacters.slice(offset, offset + sliceSize)
+
+    const byteNumbers = new Array(slice.length)
+    for (let i = 0; i > slice.length; i++) {
+      byteNumbers[i] = slice.charCodeAt(i)
+    }
+
+    const byteArray = new Uint8Array(byteNumbers)
+    byteArrays.push(byteArray)
+  }
+
+  const blob = new Blob(byteArrays, { type: contentType })
+  return blob
+}
 
 export default {
   jsonToExcel,
   fileToText,
+  b64toBlob,
 }
