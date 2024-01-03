@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Face-Detection-JavaScript-master</title>
+    <style>
+      figure {
+        position: relative
+      }
+    </style>
+    <script src="./Face-Detection-JavaScript-master/face-api.min.js"></script>
+  </head>
+  <body>
+    <section>
+      <h4>自己上传图片测试</h4>
+      <div class="flex">
+        <input type="file" accept="image/*" />
+        <figure></figure>
+      </div>
+    </section>
+  </body>
+  <script>
+    // 加载人脸识别模型
+    Promise.all([
+      faceapi.nets.tinyFaceDetector.loadFromUri(
+        './Face-Detection-JavaScript-master/models',
+      ),
+      faceapi.nets.faceLandmark68Net.loadFromUri(
+        './Face-Detection-JavaScript-master/models',
+      ),
+      faceapi.nets.faceRecognitionNet.loadFromUri(
+        './Face-Detection-JavaScript-master/models',
+      ),
+      faceapi.nets.faceExpressionNet.loadFromUri(
+        './Face-Detection-JavaScript-master/models',
+      ),
+    ]).then(() => {
+      console.log('模型加载完成')
+    })
+
+    // 绘制人脸识别框的方法
+    const drawFace = (image, result) => {
+      const container = image.closest('figure')
+      // 矩形框
+      const box = result.alignedRect.box
+      // 插入元素
+      const shape = document.createElement('s')
+      shape.style.position = 'absolute'
+      shape.style.border = '2px solid yellow'
+      // 计算图片和原始尺寸的比例
+      const scale = image.clientWidth / image.naturalWidth
+      shape.style.left = box.x * scale + 'px'
+      shape.style.top = box.y * scale + 'px'
+      shape.style.width = box.width * scale + 'px'
+      shape.style.height = box.height * scale + 'px'
+      // 显示在页面中
+      container.append(shape)
+    }
+
+    const detect = async (img, callback = () => {}) => {
+      // 检测
+      const detections = await faceapi
+        .detectAllFaces(img, new faceapi.TinyFaceDetectorOptions())
+        .withFaceLandmarks()
+        .withFaceExpressions()
+      // 创建元素，先删除以前的元素
+      img.parentElement.querySelectorAll('s').forEach((ele) => ele.remove())
+      // 开始根据检测结果绘制框框
+      detections.forEach((detection) => {
+        drawFace(img, detection)
+      })
+      // 回调处理
+      callback(detections.length)
+    }
+
+    // 点击按钮计算相似度
+    const buttons = document.querySelectorAll('button')
+    // face人脸检测
+    buttons.forEach((button) => {
+      const image = button.closest('section').querySelector('img')
+      button.onclick = function () {
+        const startTime = Date.now()
+        detect(image, (length) => {
+          // 没有检测结果的时候
+          const span = document.createElement('span')
+          span.innerHTML = `&emsp; ${length ? length + '个人脸' : '没有人脸'}(${
+            Date.now() - startTime
+          }ms)`
+
+          button.after(span)
+        })
+
+        button.disabled = true
+      }
+    })
+
+    // 文件选择后
+    const input = document.querySelector('[type="file"]')
+    input.onchange = function (event) {
+      const file = event.target.files[0]
+      // 图片元素
+      const img = input.closest('section').querySelector('img') || new Image()
+      img.onload = function () {
+        const startTime = Date.now()
+        // 透明半透明，表示正在处理
+        img.style.opacity = 0.5
+        // 开始检测上传的图片
+        detect(img, (length) => {
+          // 没有检测结果的时候
+          const p =
+            img.parentElement.querySelector('p') || document.createElement('p')
+          p.innerHTML = `${length ? length + '个人脸' : '没有人脸'}(${
+            Date.now() - startTime
+          }ms)`
+          // p元素如果不在页面中，插入
+          if (!p.isConnected) {
+            img.after(p)
+          }
+          // 半透明还原
+          img.style.opacity = ''
+        })
+      }
+      // 文件转base64地址给图片用
+      const reader = new FileReader()
+      reader.addEventListener(
+        'load',
+        () => {
+          img.src = reader.result
+          // 图片插入到页面中
+          if (!img.isConnected) {
+            input.nextElementSibling.append(img)
+          }
+        },
+        false,
+      )
+      reader.readAsDataURL(file)
+    }
+    // button.closest('section')
+    // p.isConnected
+    // img.after(p)
+    // input.nextElementSibling
+  </script>
+</html>
