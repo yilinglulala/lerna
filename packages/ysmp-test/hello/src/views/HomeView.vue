@@ -3,9 +3,9 @@ import router from '@/router/index'
 // import TheWelcome from '../components/TheWelcome.vue'
 let haslogin = true
 if (!haslogin) {
-  router.push({name: 'login'})
+  router.push({ name: 'login' })
 } else {
-  router.push({name: 'dashboard'})
+  router.push({ name: 'dashboard' })
 }
 </script>
 
