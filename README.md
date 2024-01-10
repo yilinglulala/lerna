@@ -23,3 +23,10 @@
 ## 新建package
 > -y 使用默认配置
 `lerna create [模块名称] -y`
+
+### 更改package 名称
+``
+
+
+
+

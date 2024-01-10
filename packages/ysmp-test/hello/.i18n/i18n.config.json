@@ -1,0 +1,26 @@
+{
+  "customRegular": "(?<=\\$t\\s*\\()\\s*'([\\s\\S]*?)(\\S*?)'|(?<=\\$t\\s*\\(\\s*)\"([\\s\\S]*?)(\\S*?)\"",
+  "debug": "false",
+  "duplicate": "true",
+  "model": "english",
+  "prefix": "@i18n",
+  "projectDir": "./src/",
+  "resourceDir": "./src/i18n/lang/",
+  "resourceZhFile": "./src/i18n/lang/zh.js",
+  "suffix": [".js", ".vue", ".tsx", ".ts"],
+  "ignore": ["node_modules", ".idea", ".git"],
+  "baiDu": {
+    "appid": "20180802000191283",
+    "from": "zh",
+    "key": "YGbZCf7tFHVUDXGJ4WFH",
+    "to": "en"
+  },
+  "project": {
+    "name": "web-ysmp-admin"
+  },
+  "serverUrl": "https://cloud-internet.yealinkops.com",
+  "password": "7ae6c049ffaf104bc5d5b06b1dd61315",
+  "username": "serverFrontApi",
+  "pid": "63d6201da02a980018dd1733",
+  "modules": []
+}

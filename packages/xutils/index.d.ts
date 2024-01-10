@@ -3,7 +3,9 @@ declare module 'xutils' {
   const component: {
     file: any,
     CONSTANT: any,
-    copyText: (text: string)=>{}
+    copyText: (text: string)=>{},
+    getTimeStr:()=>{}
   }
+  const Time: any
   export default component
 }

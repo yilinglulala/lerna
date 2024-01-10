@@ -1,0 +1,30 @@
+{
+  "name": "ysmp-test",
+  "version": "1.0.0",
+  "description": "Now I’m the model of a modern major general / The venerated Virginian veteran whose men are all / Lining up, to put me up on a pedestal / Writin’ letters to relatives / Embellishin’ my elegance and eloquence / But the elephant is in the room / The truth is in ya face when ya hear the British cannons go / BOOM",
+  "keywords": [],
+  "author": "xuyil <xuyil@yealink.com>",
+  "license": "ISC",
+  "main": "lib/ysmp-test.js",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "publishConfig": {
+    "registry": "https://mirrors.yealinkops.com/npm/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yilinglulala/lerna.git"
+  },
+  "scripts": {
+    "test": "node ./__tests__/ysmp-test.test.js"
+  },
+  "bugs": {
+    "url": "https://github.com/yilinglulala/lerna/issues"
+  },
+  "homepage": "https://github.com/yilinglulala/lerna#readme"
+}

@@ -1,0 +1,20 @@
+[
+    {
+        "lang": "zh",
+        "name": "简体中文",
+        "alias": [
+            "zh"
+        ],
+        "display": true,
+        "fileName": "zh.js"
+    },
+    {
+        "lang": "en",
+        "name": "English",
+        "alias": [
+            "en"
+        ],
+        "display": true,
+        "fileName": "en.js"
+    }
+]

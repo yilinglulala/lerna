@@ -4,6 +4,8 @@ import time from './time'
 
 import * as utils from './utils'
 
+export const Time = time
+
 export default {
   CONSTANT,
   file,
