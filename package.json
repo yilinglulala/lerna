@@ -5,6 +5,8 @@
     "packages/*"
   ],
   "dependencies": {
+    "browserslist": "^4.23.0",
+    "esbuild": "^0.20.1",
     "lodash": "^4.17.21"
   },
   "devDependencies": {

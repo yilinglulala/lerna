@@ -4,7 +4,14 @@
   > div {
     flex: 1
   }
+  &.space-between {
+    justify-content: space-between;
+  }
+  &.align-item-center {
+    align-items: center;
+  }
 }
 .m-b-16 {
   margin-bottom: 16px;
 }
+

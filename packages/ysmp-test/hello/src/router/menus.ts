@@ -9,7 +9,7 @@ const routes: Array<any> = [
   {
     path: '/main',
     name: 'main',
-    component: () => import('../views/layout/Main.vue'),
+    component: () => import('../views/layout/Main/Index.vue'),
     children: [
       {
         path: 'dashboard',

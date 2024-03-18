@@ -2,9 +2,14 @@ import { createRouter, createWebHashHistory } from 'vue-router'
 // import Nav from '../views/nav.vue'
 const routes = [
   {
+    path: '/buildBlocks',
+    name: 'buildBlocks',
+    component: () => import('../views/buildBlocks/index.vue'),
+  },
+  {
     path: '/',
     component: () => import('../views/nav.vue'),
-    redirect: '/i18n',
+    redirect: '/',
     children: [
       {
         path: '/i18n',
