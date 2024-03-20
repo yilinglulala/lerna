@@ -10,38 +10,28 @@
         </div>
       </el-header>
       <el-container>
-        <el-aside width="320px">
-          <div class="demo-collapse">
-            <el-collapse v-model="activeNames" @change="handleChange" class="mx-4">
-              <el-collapse-item v-for="item in compConfig" :title="item.title" :name="item.key" :key="item.key" >
-                <el-button
-                  v-for="comp in item.items"
-                  :key="comp.key"
-                  @click="setCode(comp.key)"
-                >
-                  {{ comp.label }}
-                </el-button>
-              </el-collapse-item>
-            </el-collapse>
-          </div>
-        </el-aside>
+        <Aside></Aside>
         <el-container>
           <el-main>
-            <page-editor></page-editor>
+            <page-editor @click-comp="clickCompInEditor" @click-page="clickPage"></page-editor>
           </el-main>
           <el-footer>Footer</el-footer>
         </el-container>
       </el-container>
+      <setter ref="setter" :detail="detail" />
     </el-container>
   </div>
 </template>
 
 <script setup lang="ts">
-import { reactive, ref } from 'vue'
-import PageEditor from './pageEditor.vue'
+import { onMounted, reactive, ref } from 'vue'
+import Aside from './layout/aside/index.vue'
+import PageEditor from './layout/pageEditor.vue'
 import { useSourceCodeStore } from '@store/index'
+import Setter from './layout/setter/index.vue'
 const store = useSourceCodeStore()
 let { setCode } = store
+
 
 let tools = reactive([
   {
@@ -55,20 +45,20 @@ let tools = reactive([
   { label: '预览', key: 'preview', event: () => {} },
   { label: '源码', key: 'code', event: () => {} },
 ])
+/********** setter **********/
 
-let compConfig = reactive([
-  { title: '布局', key: 'layout', items: [{ label: '容器', key: 'container' }] },
-  {
-    title: '控件', key: "comp",
-    items: [
-      { label: '文本', key: 'text' },
-      { label: '图片', key: 'image' },
-      { label: '按钮', key: 'button' },
-      { label: '轮播', key: 'carousel ' },
-    ],
-  },
-])
-const activeNames = ref(['layout','comp'])
+const setter = ref(null) // 设置器的ref
+const detail = ref(null) // 选中组件详情
+// 编辑器点击组件
+const clickCompInEditor = (comp) => {
+  setter.value.setVisible(true)
+  detail.value = comp
+}
+const clickPage = () =>{
+  console.log(111);
+  
+  setter.value.setVisible(false)
+}
 </script>
 <style lang="scss" scoped>
 .el-header {
