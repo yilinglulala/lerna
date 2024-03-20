@@ -1,7 +1,9 @@
 <template>
+      <!-- filter=".block-focus-shape-line" -->
   <div class="h-full" @click="$emit('click-page')">
     <vue-draggable-next
       :list="componentList"
+      handle=".mover"
       ghost-class="ghost"
       chosen-class="chosenClass"
       animation="300"
@@ -10,16 +12,20 @@
       @end="onEnd"
     >
       <div v-for="comp in componentList" :key="comp.id">
-        <component
-          :is="comp.component || 'div'"
-          v-bind="{ ...comp.bind }"
-          :style="comp.style"
-          @click.stop="clickComp(comp)"
-          class="relative"
-        >
-          {{ comp.text }}
-          <div class="selected-comp border-4"></div>
-        </component>
+        <span class="relative inline-block">
+          <component
+            :id="comp.id"
+            :is="comp.component || 'div'"
+            v-bind="{ ...comp.bind }"
+            :style="comp.style"
+            @click.stop="clickComp(comp)"
+            class="mover"
+          >
+            {{ comp.text }}
+          </component>
+          {{activeComp.value}}
+          <block-focus-shape v-if="activeComp===comp.id" :block="comp"/>
+        </span>
       </div>
     </vue-draggable-next>
   </div>
@@ -28,6 +34,7 @@
 import { VueDraggableNext } from 'vue-draggable-next'
 import { computed, reactive, ref } from 'vue'
 import { storeToRefs } from 'pinia'
+import { BlockFocusShape } from '../component/index'
 
 import { useSourceCodeStore } from '@store/index'
 const store = useSourceCodeStore()
@@ -44,6 +51,9 @@ const componentList = reactive([
     id: '1',
     text: '我是文本',
     bind: {},
+    style: {
+
+    }
   },
   {
     component: 'img',
@@ -59,19 +69,13 @@ const componentList = reactive([
 let activeComp = ref('')
 
 const clickComp = (comp) => {
-  activeComp.value = comp.key
+  activeComp.value = comp.id
   emit('click-comp', comp)
 }
 const onEnd = (e) => {
   console.log('onEnd', e)
 }
+
 </script>
 <style lang="scss" scoped>
-.selected-comp {
-  // border-color: pink;
-  position: absolute;
-  top: 0;
-  width: 100%;
-  height: 100%;
-}
 </style>

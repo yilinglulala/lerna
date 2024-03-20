@@ -1,9 +1,22 @@
 // 属性配置项
 import img from "@/assets/img/01.png"
+// todo
+const lcrOption = [
+  { label: '左', value: 'left' },
+  { label: '居中', value: 'center' },
+  { label: '右', value: 'right' },
+]
+const containerConfig = [
+  { desc: '水平对齐', prop: 'justify-content', renderType: 'radio-button', options: lcrOption },
+  { desc: '垂直对齐', prop: 'align-items', renderType: 'radio-button', options: lcrOption },
+]
 // 文本
 export const text = {
-  component: 'span',
+  component: 'div',
   text: '文本',
+  style: {
+    display: 'flex'
+  },
   // container: [
   //   { desc: '水平对齐', prop: 'justify-content' },
   //   { desc: '垂直对齐', prop: 'align-item' },
@@ -16,6 +29,7 @@ export const text = {
   //   { desc: '字体颜色', prop: 'font-color' },
   //   { desc: '行高', prop: 'line-height' },
   // ],
+  containerConfig,
   event: [],
 }
 

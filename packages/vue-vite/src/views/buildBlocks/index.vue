@@ -27,8 +27,8 @@
 import { onMounted, reactive, ref } from 'vue'
 import Aside from './layout/aside/index.vue'
 import PageEditor from './layout/pageEditor.vue'
-import { useSourceCodeStore } from '@store/index'
 import Setter from './layout/setter/index.vue'
+import { useSourceCodeStore } from '@store/index'
 const store = useSourceCodeStore()
 let { setCode } = store
 
@@ -50,13 +50,12 @@ let tools = reactive([
 const setter = ref(null) // 设置器的ref
 const detail = ref(null) // 选中组件详情
 // 编辑器点击组件
-const clickCompInEditor = (comp) => {
+const clickCompInEditor = (comp: any) => {
   setter.value.setVisible(true)
   detail.value = comp
 }
 const clickPage = () =>{
   console.log(111);
-  
   setter.value.setVisible(false)
 }
 </script>

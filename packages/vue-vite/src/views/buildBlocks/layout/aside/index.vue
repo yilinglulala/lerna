@@ -40,7 +40,11 @@ const compConfig = reactive([
   {
     title: '布局',
     key: 'layout',
-    items: [{ label: '容器', key: 'container' }],
+    items: [
+      { label: '容器', key: 'container' },
+      { label: '自由布局', key: 'absolute' },
+      { label: '弹性布局', key: 'flex' },
+    ],
   },
   {
     title: '控件',
