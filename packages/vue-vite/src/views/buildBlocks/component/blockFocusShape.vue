@@ -1,6 +1,16 @@
 <template>
-  <div class="block-focus-shape-line" v-for="i in scaleLinePoints" :key="i" :style="getShapeLineStyle(i)"
-    @mousedown.stop="(e)=>handleMouseDownPoint(e, i)"></div>
+  <div
+    class="block-focus-shape-line"
+    v-for="i in scaleLinePoints"
+    :key="i"
+    :style="getShapeLineStyle(i)"
+    @mousedown.stop="(e) => handleMouseDownPoint(e, i)"
+  ></div>
+  <div class="tools absolute">
+    <span v-for="tool in tools" :key="tool.key" @click="handleTool(tool.key)">
+      {{ tool.name }}
+    </span>
+  </div>
 </template>
 
 <script setup lang="ts">
@@ -8,8 +18,9 @@ import { computed } from 'vue'
 
 type TPoint = 'l' | 'r' | 't' | 'b'
 let props = defineProps(['block'])
+const emit = defineEmits(['del'])
 let block1: any = computed(() => props.block)
-const scaleLinePoints = ['l', 'r', 't', 'b']; // 横纵伸缩
+const scaleLinePoints = ['l', 'r', 't', 'b'] // 横纵伸缩
 const cursorPoints = {
   lt: 'nw',
   rt: 'ne',
@@ -85,6 +96,22 @@ const handleMouseDownPoint = (event: MouseEvent, point: TPoint) => {
   document.addEventListener('mousemove', pointMouseMove)
   document.addEventListener('mouseup', pointMouseUp)
 }
+
+/********** 工具列 **********/
+
+const tools = [
+  { name: '删除', key: 'del' },
+  // { name: '添加', key: 'add' },
+]
+// 点击工具
+const handleTool = (key: 'del') => {
+  let obj = {
+    del: () => {
+      emit('del', block1)
+    },
+  }
+  obj[key] && obj[key]()
+}
 </script>
 
 <style lang="scss" scoped>
@@ -103,6 +130,17 @@ const handleMouseDownPoint = (event: MouseEvent, point: TPoint) => {
     left: 50%;
     background: #3297fc;
     transform: translate(-50%, -50%);
+  }
+}
+.tools {
+  top: -20px;
+  right: 0;
+  font-size: 12px;
+
+  > span {
+    padding: 4px;
+    background: #3297fc;
+    color: #fff;
   }
 }
 </style>

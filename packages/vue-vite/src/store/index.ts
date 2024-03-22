@@ -1,5 +1,5 @@
 import { defineStore } from 'pinia'
-import { computed, ref } from 'vue'
+import { computed, reactive, ref } from 'vue'
 
 // 你可以任意命名 `defineStore()` 的返回值，但最好使用 store 的名字，同时以 `use` 开头且以 `Store` 结尾。
 // (比如 `useUserStore`，`useCartStore`，`useProductStore`)
@@ -25,4 +25,21 @@ export const useSourceCodeStore = defineStore('sourceCode', () => {
   }
 
   return { code, setCode, getCode }
+})
+// 选中组件id
+export const useActiveCompIdStore = defineStore('ActiveCompId', () => {
+  const ActiveCompId = reactive([])
+  const getActiveCompId = computed(() => ActiveCompId)
+  function setActiveCompId(v: string) {
+    ActiveCompId.length = 1
+    ActiveCompId[0] = v
+    // if (ActiveCompId.includes(v)) {
+    //   ActiveCompId.splice(ActiveCompId.findIndex(id => id === v), 1)
+    // } else {
+    //   ActiveCompId.push(v)
+    // }
+
+  }
+
+  return { ActiveCompId, setActiveCompId, getActiveCompId }
 })

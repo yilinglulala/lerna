@@ -1,45 +1,80 @@
 // 属性配置项
+import Container from '../renders/container.vue'
+import nestDraggable from '../renders/nestDraggble.vue'
 import img from "@/assets/img/01.png"
-// todo
-const lcrOption = [
-  { label: '左', value: 'left' },
-  { label: '居中', value: 'center' },
-  { label: '右', value: 'right' },
-]
-const containerConfig = [
-  { desc: '水平对齐', prop: 'justify-content', renderType: 'radio-button', options: lcrOption },
-  { desc: '垂直对齐', prop: 'align-items', renderType: 'radio-button', options: lcrOption },
-]
+import { styleConfig, bindConfig } from "./constant"
+import { shallowRef } from 'vue';
+
+// 组件配置接口类型
+interface ICompConfig {
+  key?: string;
+  component?: string | any;
+  componentList?: Array<any>;
+  text?: string;
+  style: Record<string, string>
+  containerConfig: Array<any>
+  bind?: Record<string, string>
+  bindConfig?: Array<any>
+  event?: Array<any>
+}
+
+const pickFromArr = (targetArr: any[], arr: string[], key = 'prop') => {
+  return targetArr.filter(v => arr.includes(v[key]))
+}
+/********* 控件 *********/
+// 标题
+export const title: ICompConfig = {
+  component: 'h6',
+  text: '标题',
+  style: {
+    color: ''
+  },
+  containerConfig: [
+    {
+      desc: '标题大小', prop: 'component', renderType: 'select',
+      options: new Array(6).fill(0).map((v, i) => ({ value: `h${i + 1}`, label: `h${i + 1}` }))
+    },
+    ...pickFromArr(styleConfig, ['color', 'margin', 'padding'])
+  ]
+}
 // 文本
-export const text = {
+export const text: ICompConfig = {
   component: 'div',
   text: '文本',
   style: {
     display: 'flex'
   },
-  // container: [
-  //   { desc: '水平对齐', prop: 'justify-content' },
-  //   { desc: '垂直对齐', prop: 'align-item' },
-  // ],
-  // bind: [
-  //   { desc: '文本内容', prop: 'text' },
-  // ],
-  // style: [
-  //   { desc: '字体大小', prop: 'font-size' },
-  //   { desc: '字体颜色', prop: 'font-color' },
-  //   { desc: '行高', prop: 'line-height' },
-  // ],
-  containerConfig,
+  containerConfig: [...pickFromArr(styleConfig, ['color', 'margin', 'padding'])],
   event: [],
 }
 
 // 图片
-export const image = {
+export const image: ICompConfig = {
   component: 'img',
-  // container: [],
-  // style: [],
+  style: {},
+  containerConfig: [
+    ...pickFromArr(styleConfig, ['margin'])
+  ],
   bind: {
     src: img
   },
+  bindConfig: [
+    ...pickFromArr(bindConfig, ['src'])
+  ],
   event: [],
+}
+
+/********* 布局 *********/
+export const container: ICompConfig = {
+  key: 'container',
+  component: shallowRef(nestDraggable),
+  componentList: [],
+  style: {
+    width: '100%',
+    height: '200px',
+    border:'1px dashed'
+  },
+  containerConfig: [
+    ...pickFromArr(styleConfig, ['background-color','background-image','margin', 'padding'])
+  ],
 }

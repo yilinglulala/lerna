@@ -11,7 +11,8 @@
     "esModuleInterop": true,
     "lib": ["esnext", "dom"],
     "types": ["element-plus/global"],
-    "allowSyntheticDefaultImports": true
+    "allowSyntheticDefaultImports": true,
+    "jsxImportSource": "vue"
   },
   "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"],
   "references": [{ "path": "./tsconfig.node.json" }]

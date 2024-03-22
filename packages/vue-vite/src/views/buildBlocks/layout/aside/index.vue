@@ -1,6 +1,6 @@
 <template>
   <el-aside width="320px">
-    <div class="demo-collapse">
+    <div class="layout-aside-container">
       <el-collapse v-model="activeNames" @change="handleChange" class="mx-4">
         <el-collapse-item
           v-for="item in compConfig"
@@ -12,6 +12,7 @@
             :list="item.items"
             ghost-class="ghost"
             chosen-class="chosenClass"
+            class="buttons"
             animation="300"
             :sort="false"
             :group="{ name: 'comp', pull: 'clone', put: false }"
@@ -41,7 +42,7 @@ const compConfig = reactive([
     title: '布局',
     key: 'layout',
     items: [
-      { label: '容器', key: 'container' },
+      { label: '容器', key: 'container', ...Config.container },
       { label: '自由布局', key: 'absolute' },
       { label: '弹性布局', key: 'flex' },
     ],
@@ -50,6 +51,7 @@ const compConfig = reactive([
     title: '控件',
     key: 'comp',
     items: [
+      { label: '标题', key: 'text', ...Config.title },
       { label: '文本', key: 'text', ...Config.text },
       { label: '图片', key: 'image', ...Config.image },
       { label: '按钮', key: 'button' },
@@ -69,3 +71,15 @@ const onStart = (event) => {
   // event.dataTransfer.setData('my-extra-info', 'world')
 }
 </script>
+<style lang="scss">
+.layout-aside-container {
+  .buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .el-button+.el-button {
+    margin-left: 0;
+  }
+}
+</style>

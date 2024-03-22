@@ -13,7 +13,10 @@
         <Aside></Aside>
         <el-container>
           <el-main>
-            <page-editor @click-comp="clickCompInEditor" @click-page="clickPage"></page-editor>
+            <page-editor
+              @click-comp="clickCompInEditor"
+              @click-page="clickPage"
+            ></page-editor>
           </el-main>
           <el-footer>Footer</el-footer>
         </el-container>
@@ -28,12 +31,12 @@ import { onMounted, reactive, ref } from 'vue'
 import Aside from './layout/aside/index.vue'
 import PageEditor from './layout/pageEditor.vue'
 import Setter from './layout/setter/index.vue'
-import { useSourceCodeStore } from '@store/index'
+import { useSourceCodeStore, useActiveCompIdStore } from '@store/index'
 const store = useSourceCodeStore()
 let { setCode } = store
 
-
 let tools = reactive([
+  { label: '清空', key: 'clear', event: () => {} },
   {
     label: '保存',
     key: 'save',
@@ -54,8 +57,7 @@ const clickCompInEditor = (comp: any) => {
   setter.value.setVisible(true)
   detail.value = comp
 }
-const clickPage = () =>{
-  console.log(111);
+const clickPage = () => {
   setter.value.setVisible(false)
 }
 </script>
