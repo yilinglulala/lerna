@@ -7,7 +7,7 @@
     @mousedown.stop="(e) => handleMouseDownPoint(e, i)"
   ></div>
   <div class="tools absolute">
-    <span v-for="tool in tools" :key="tool.key" @click="handleTool(tool.key)">
+    <span v-for="tool in tools" :key="tool.key" @click.stop="handleTool(tool.key)">
       {{ tool.name }}
     </span>
   </div>
@@ -18,7 +18,7 @@ import { computed } from 'vue'
 
 type TPoint = 'l' | 'r' | 't' | 'b'
 let props = defineProps(['block'])
-const emit = defineEmits(['del'])
+const emit = defineEmits(['del','events'])
 let block1: any = computed(() => props.block)
 const scaleLinePoints = ['l', 'r', 't', 'b'] // 横纵伸缩
 const cursorPoints = {
@@ -101,7 +101,7 @@ const handleMouseDownPoint = (event: MouseEvent, point: TPoint) => {
 
 const tools = [
   { name: '删除', key: 'del' },
-  // { name: '添加', key: 'add' },
+  { name: '复制', key: 'copy' },
 ]
 // 点击工具
 const handleTool = (key: 'del') => {
@@ -110,7 +110,12 @@ const handleTool = (key: 'del') => {
       emit('del', block1)
     },
   }
-  obj[key] && obj[key]()
+  if (obj[key]) {
+    obj[key]()
+  } else {
+    emit('events','copy', block1)
+  }
+  
 }
 </script>
 

@@ -15,7 +15,6 @@
         v-for="item in detail.bindConfig"
         :label="item.desc"
         :key="item.prop"
-        
       >
         <el-radio-group
           v-if="item.renderType === 'radio-button'"
@@ -41,13 +40,16 @@
             :value="item.value"
           />
         </el-select>
-        <component :is="item.renderType || 'el-input'" v-else v-model="get(detail, item.target, detail)[item.prop]" />
+        <component
+          :is="item.renderType || 'el-input'"
+          v-else
+          v-model="get(detail, item.target, detail)[item.prop]"
+        />
       </el-form-item>
       <el-form-item
         v-for="item in detail.containerConfig"
         :label="item.desc"
         :key="item.prop"
-        
       >
         <el-radio-group
           v-if="item.renderType === 'radio-button'"
@@ -73,7 +75,11 @@
             :value="item.value"
           />
         </el-select>
-        <component :is="item.renderType || 'el-input'" v-else v-model="get(detail, item.target, detail)[item.prop]" />
+        <component
+          :is="item.renderType || 'el-input'"
+          v-else
+          v-model="get(detail, item.target, detail)[item.prop]"
+        />
       </el-form-item>
     </el-form>
   </el-drawer>
@@ -81,13 +87,37 @@
 
 <script setup lang="ts">
 // TODO 边距如何设置比较合理
-import { get } from 'lodash'
-import { computed, ref } from 'vue'
+// 单位怎么处理合适
+import { get, cloneDeep } from 'lodash'
+import { computed, ref, watch, WritableComputedRef } from 'vue'
+let name = 'Setter'
 
 const props = defineProps(['detail'])
-let detail = computed(() => props.detail || {})
 
-let visible = ref(false)
+// let detail = ref()
+let detail = computed(() => {
+  let detail = props.detail
+  let bgi = detail?.style['background-image']
+  if (bgi) {
+    detail.style['url_background-image'] = bgi
+      .replace(/url\(/, '')
+      .replace(/\)/, '')
+  }
+  // 单位转化
+  // 背景图加url()
+  // 上右下左
+  return detail
+})
+
+
+watch(detail, (v) => {
+  let bgi = get(v, 'style.url_background-image')
+  if (bgi) {
+    props.detail.style['background-image'] = `url(${bgi})`
+  }
+})
+
+const visible = ref(false)
 const setVisible = (v: boolean) => {
   visible.value = v
 }

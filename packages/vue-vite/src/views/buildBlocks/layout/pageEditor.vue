@@ -33,7 +33,7 @@
         </span>
       </div>
     </vue-draggable-next> -->
-    <nestDraggable :componentList="componentList" :activeComp="activeComp" @del="handleDel" @click-comp="clickComp"></nestDraggable>
+    <nestDraggable :componentList="componentList" :activeComp="activeComp" @click-comp="clickComp"></nestDraggable>
     <div class="text-center">
       <el-button >+</el-button>
     </div>
@@ -84,12 +84,13 @@ const clickPage = () => {
 
 // 操作相关
 // 删除组件
-const handleDel = (comp: any) => {
-  componentList.splice(
-    componentList.findIndex((v) => v.id === comp.id),
-    1,
-  )
-}
+// const handleDel = (comp: any) => {
+//   debugger
+//   componentList.splice(
+//     componentList.findIndex((v) => v.id === comp.id),
+//     1,
+//   )
+// }
 
 const onEnd = (e) => {
   console.log('onEnd', e)
