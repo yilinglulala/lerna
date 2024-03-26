@@ -89,33 +89,12 @@
 // TODO 边距如何设置比较合理
 // 单位怎么处理合适
 import { get, cloneDeep } from 'lodash'
-import { computed, ref, watch, WritableComputedRef } from 'vue'
+import { computed, reactive, ref, watch, WritableComputedRef } from 'vue'
 let name = 'Setter'
 
 const props = defineProps(['detail'])
-
-// let detail = ref()
-let detail = computed(() => {
-  let detail = props.detail
-  let bgi = detail?.style['background-image']
-  if (bgi) {
-    detail.style['url_background-image'] = bgi
-      .replace(/url\(/, '')
-      .replace(/\)/, '')
-  }
-  // 单位转化
-  // 背景图加url()
-  // 上右下左
-  return detail
-})
-
-
-watch(detail, (v) => {
-  let bgi = get(v, 'style.url_background-image')
-  if (bgi) {
-    props.detail.style['background-image'] = `url(${bgi})`
-  }
-})
+// TODO 优化背景图不用输入url()
+let detail = computed(props.detail)
 
 const visible = ref(false)
 const setVisible = (v: boolean) => {
