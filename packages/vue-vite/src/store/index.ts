@@ -43,3 +43,12 @@ export const useActiveCompIdStore = defineStore('ActiveCompId', () => {
 
   return { ActiveCompId, setActiveCompId, getActiveCompId }
 })
+// 选中卡片id
+export const useActiveCardStore = defineStore('ActiveCard', () => {
+  const ActiveCard = ref('')
+  function setActiveCard(v: string) {
+    ActiveCard.value = v
+  }
+
+  return { ActiveCard, setActiveCard }
+})

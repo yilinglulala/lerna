@@ -7,6 +7,11 @@ const routes = [
     component: () => import('../views/buildBlocks/index.vue'),
   },
   {
+    path: '/test',
+    name: 'test',
+    component: () => import('../views/test/index.vue'),
+  },
+  {
     path: '/',
     component: () => import('../views/nav.vue'),
     redirect: '/',
