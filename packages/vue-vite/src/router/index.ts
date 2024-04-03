@@ -12,6 +12,21 @@ const routes = [
     component: () => import('../views/test/index.vue'),
   },
   {
+    path: '/test1',
+    name: 'test1',
+    component: () => import('../views/test/test1/index.vue'),
+    meta: {
+      title: 'Link'
+    },
+    children: [
+      {
+        path: '/Linker/Edit',
+        name: 'LinkerEdit',
+        component: () => import('../views/test/test1/Linker/edit/index.vue'),
+      },
+    ]
+  },
+  {
     path: '/',
     component: () => import('../views/nav.vue'),
     redirect: '/',
