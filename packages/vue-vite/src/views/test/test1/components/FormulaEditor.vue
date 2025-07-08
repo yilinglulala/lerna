@@ -1,11 +1,11 @@
 <!-- 公式编辑 -->
 <template>
-  <Dialog v-model="visible" title="公式编辑">
+  <Dialog v-model="visible" title="公式编辑" class="formula-editor-container">
     <div class="editor">
       <div class="var">
         字段变量
         <div class="border wrapper">
-          <div v-for="item in data" :key="item.key">
+          <div v-for="item in data" :key="item.key" @click="selectVar(item)">
             {{ item.key }}
           </div>
         </div>
@@ -14,7 +14,7 @@
         <span>在左侧选择字段变量或右侧选择函数，且在英文输入法下编辑</span>
         <div class="border wrapper">
           <main>
-            <pre contenteditable="true" id="pre">{{ content }}</pre>
+            <pre contenteditable="true" id="pre" @click="contentChanged"></pre>
           </main>
           <footer class="b-t">
             <p v-for="p in tip" :key="p">
@@ -23,6 +23,7 @@
           </footer>
         </div>
       </div>
+      <!-- 函数 -->
       <div class="function">
         <span>函数</span>
         <div class="border wrapper">
@@ -61,16 +62,59 @@ const visible = computed({
 /********** 变量 **********/
 
 const data = computed(() => props.data)
+const selectVar = (item) => {
+  const span = document.createElement('span')
+  span.textContent = item.key
+  setContent1(span)
+  // setContent(`<span class="is-var">${item.key}</span>`, true)
+}
 
 /********** 编辑 **********/
-
+const lastCursorIndex = ref(0)
+const lastStrIndex = ref(0)
 const content = ref('')
 const tip = ref([
   `请从左侧面板选择字段或选项`,
   `支持英文模式下运算符(+、-、*、/、>、<、==、!=、<=、>=)及函数`,
 ])
+const setContent1 = (ele: any) => {
+  const pre: any = document.getElementById('pre')
+  if (pre) {
+    pre?.focus()
+    nextTick(() => {
+      var selection: any = window.getSelection()
+      if (pre.childNodes.length > 0) {
+        for (let i = 0; i < pre.childNodes.length; i++) {
+          if (i == selection.anchorOffset) {
+            pre.insertBefore(ele, pre.childNodes[i])
+          }
+        }
+      } else {
+        // 否则直接插入一个元素
+        pre.appendChild(ele)
+      }
+    })
+  }
+}
+// 设置编辑区内容
+const setContent = (txt: string, isVar = true) => {
+  const lastIndex = lastCursorIndex.value
+  const old = content.value
+  content.value = `${old.slice(0, lastStrIndex.value)}${txt}${old.slice(
+    lastStrIndex.value,
+  )}`
 
-// 函数
+  let ele = document.getElementById('pre')
+  if (ele) {
+    ele?.focus()
+    nextTick(() => {
+      lastStrIndex.value += isVar ? txt.length : txt.length - 1
+      setFocusFun(ele, lastIndex + (isVar ? 1 : txt.length - 1))
+      // setFocusFun(ele, lastIndex + txt.length + len)
+    })
+  }
+}
+/********** 函数 **********/
 const funcs = [
   {
     title: '集合函数',
@@ -93,73 +137,81 @@ const funcs = [
     func: [{ label: 'CONCATENATE' }, { label: 'GETUUID' }, { label: 'LEN' }],
   },
 ]
+// 设置光标位置
 function setFocusFun(ele: any, len: number) {
   var element: any = document.getElementById('pre')
-  var range = document.createRange()
   var selection: any = window.getSelection()
-  // var offset = selection.focusOffset;
+  var range = document.createRange()
   lastCursorIndex.value = len
-  range.setStart(element.firstChild, len)
+  console.log('lastCursorIndex.value>> ', lastCursorIndex.value)
+  range.setStart(element, len)
   range.collapse(true)
 
   selection.removeAllRanges()
   selection.addRange(range)
 }
-const lastCursorIndex = ref(0)
+
+// 选择函数回调
 const selectFunc = (func) => {
   const txt = `${func.label}()`
-  const old = content.value
   tip.value = func.tip
-  content.value += txt
-  let ele = document.getElementById('pre')
-  if (ele) {
-    ele?.focus()
-    nextTick(() => {
-      var selection: any = window.getSelection()
-      var range = selection.getRangeAt(0)
-      let lastIndex = range.startOffset
-      content.value = `${old.slice(
-        0,
-        lastIndex,
-      )}${txt}${old.slice(lastIndex)}`
-      setFocusFun(ele, lastIndex + txt.length - 1)
-    })
-  }
+  setContent(txt, false)
+}
+// 手动点击时记录光标位置
+const contentChanged = () => {
+  var selection: any = window.getSelection()
+  var range = selection.getRangeAt(0)
+  let lastIndex = range.startOffset
+  lastCursorIndex.value = lastIndex
+  console.log('手动点击时记录', lastIndex)
+  // lastStrIndex.value =
 }
 </script>
 
-<style lang="scss" scoped>
-.editor {
-  position: relative;
-  display: flex;
-  gap: 16px;
-  height: 368px;
-  > div > div {
+<style lang="scss">
+.formula-editor-container {
+  .editor {
+    position: relative;
+    display: flex;
+    gap: 16px;
     height: 368px;
-  }
-}
-.var {
-  width: 192px;
-}
-.middle {
-  width: 496px;
-  main {
-    height: 240px;
-    pre {
-      outline: none;
+    line-height: 32px;
+    > div > div {
+      padding: 0 16px;
+      height: 368px;
+      overflow: auto;
     }
   }
-  footer {
-    height: 128px;
-    overflow: auto;
+  .is-var {
+    background: pink;
+    border: 1px solid;
   }
-}
-.function {
-  width: 192px;
-  line-height: 32px;
-  details {
-    ul {
-      margin-left: 16px;
+  .var {
+    width: 192px;
+  }
+  .middle {
+    width: 496px;
+
+    main {
+      height: 240px;
+      overflow: auto;
+      pre {
+        outline: none;
+      }
+    }
+    footer {
+      height: 125px;
+      line-height: 1.6;
+      overflow: auto;
+    }
+  }
+  .function {
+    width: 192px;
+
+    details {
+      ul {
+        margin-left: 16px;
+      }
     }
   }
 }

@@ -1,0 +1,287 @@
+[2025-04-01T20:36:02.986] [DEBUG] default - Some debug messages
+[2025-04-01T20:36:02.991] [INFO] default - Some info messages
+[2025-04-01T20:36:02.992] [WARN] default - Some warn messages
+[2025-04-01T20:36:02.993] [ERROR] default - Some error messages
+[2025-04-01T20:36:02.995] [INFO] default - log4js.getLogger() aaaaaaaaaaaaaaaaaaaaaaaaa
+[2025-04-01T20:36:23.463] [DEBUG] default - Some debug messages
+[2025-04-01T20:36:23.466] [INFO] default - Some info messages
+[2025-04-01T20:36:23.466] [WARN] default - Some warn messages
+[2025-04-01T20:36:23.466] [ERROR] default - Some error messages
+[2025-04-01T20:36:23.467] [INFO] default - log4js.getLogger() aaaaaaaaaaaaaaaaaaaaaaaaa
+[2025-04-01T20:37:14.218] [DEBUG] default - Some debug messages
+[2025-04-01T20:37:14.220] [INFO] default - Some info messages
+[2025-04-01T20:37:14.221] [WARN] default - Some warn messages
+[2025-04-01T20:37:14.221] [ERROR] default - Some error messages
+[2025-04-01T20:37:14.222] [INFO] default - log4js.getLogger() aaaaaaaaaaaaaaaaaaaaaaaaa
+[2025-04-01T20:38:56.556] [DEBUG] default - Some debug messages
+[2025-04-01T20:38:56.558] [INFO] default - Some info messages
+[2025-04-01T20:38:56.559] [WARN] default - Some warn messages
+[2025-04-01T20:38:56.559] [ERROR] default - Some error messages
+[2025-04-01T20:38:56.559] [INFO] default - log4js.getLogger() aaaaaaaaaaaaaaaaaaaaaaaaa
+[2025-04-01T20:40:38.999] [DEBUG] default - Some debug messages
+[2025-04-01T20:40:39.002] [INFO] default - Some info messages
+[2025-04-01T20:40:39.003] [WARN] default - Some warn messages
+[2025-04-01T20:40:39.003] [ERROR] default - Some error messages
+[2025-04-01T20:40:39.004] [INFO] default - log4js.getLogger() aaaaaaaaaaaaaaaaaaaaaaaaa
+[2025-04-01T20:40:42.850] [DEBUG] default - Some debug messages
+[2025-04-01T20:40:42.852] [INFO] default - Some info messages
+[2025-04-01T20:40:42.853] [WARN] default - Some warn messages
+[2025-04-01T20:40:42.853] [ERROR] default - Some error messages
+[2025-04-01T20:40:42.854] [INFO] default - log4js.getLogger() aaaaaaaaaaaaaaaaaaaaaaaaa
+[2025-04-02T09:29:52.770] [DEBUG] default - Some debug messages
+[2025-04-02T09:29:52.773] [INFO] default - Some info messages
+[2025-04-02T09:29:52.774] [WARN] default - Some warn messages
+[2025-04-02T09:29:52.774] [ERROR] default - Some error messages
+[2025-04-02T09:29:52.775] [INFO] default - log4js.getLogger() aaaaaaaaaaaaaaaaaaaaaaaaa
+[2025-04-02T09:29:55.499] [INFO] default -   [90m<--[39m [1mGET[22m [90m/aa[39m
+[2025-04-02T09:29:55.508] [INFO] default -   [90m-->[39m [1mGET[22m [90m/aa[39m [32m200[39m [90m8ms[39m [90m10b[39m
+[2025-04-02T09:32:09.672] [DEBUG] default - Some debug messages
+[2025-04-02T09:32:09.675] [INFO] default - Some info messages
+[2025-04-02T09:32:09.676] [WARN] default - Some warn messages
+[2025-04-02T09:32:09.676] [ERROR] default - Some error messages
+[2025-04-02T09:34:35.118] [DEBUG] default - Some debug messages
+[2025-04-02T09:34:35.119] [INFO] default - Some info messages
+[2025-04-02T09:34:35.119] [WARN] default - Some warn messages
+[2025-04-02T09:34:35.120] [ERROR] default - Some error messages
+[2025-04-02T09:35:25.044] [DEBUG] default - Some debug messages
+[2025-04-02T09:35:25.045] [INFO] default - Some info messages
+[2025-04-02T09:35:25.046] [WARN] default - Some warn messages
+[2025-04-02T09:35:25.046] [ERROR] default - Some error messages
+[2025-04-02T09:35:25.047] [INFO] default - log4js.getLogger() aaaaaaaaaaaaaaaaaaaaaaaaa
+[2025-04-02T09:35:28.511] [INFO] default -   [90m<--[39m [1mGET[22m [90m/aa[39m
+[2025-04-02T09:35:28.522] [INFO] default -   [90m-->[39m [1mGET[22m [90m/aa[39m [32m200[39m [90m12ms[39m [90m10b[39m
+[2025-04-02T09:43:39.701] [DEBUG] default - Some debug messages
+[2025-04-02T09:43:39.702] [INFO] default - Some info messages
+[2025-04-02T09:43:39.702] [WARN] default - Some warn messages
+[2025-04-02T09:43:39.703] [ERROR] default - Some error messages
+[2025-04-02T09:43:39.703] [INFO] default - log4js.getLogger() aaaaaaaaaaaaaaaaaaaaaaaaa
+[2025-04-02T09:44:11.701] [DEBUG] default - Some debug messages
+[2025-04-02T09:44:11.701] [INFO] default - Some info messages
+[2025-04-02T09:44:11.702] [WARN] default - Some warn messages
+[2025-04-02T09:44:11.702] [ERROR] default - Some error messages
+[2025-04-02T09:44:11.702] [INFO] default - log4js.getLogger() aaaaaaaaaaaaaaaaaaaaaaaaa
+[2025-04-02T09:44:17.155] [DEBUG] default - Some debug messages
+[2025-04-02T09:44:17.156] [INFO] default - Some info messages
+[2025-04-02T09:44:17.157] [WARN] default - Some warn messages
+[2025-04-02T09:44:17.157] [ERROR] default - Some error messages
+[2025-04-02T09:44:17.158] [INFO] default - log4js.getLogger() aaaaaaaaaaaaaaaaaaaaaaaaa
+[2025-04-02T09:44:25.032] [INFO] default - 22222222222   [90m<--[39m [1mGET[22m [90m/aa[39m [
+  '  \x1B[90m<--\x1B[39m \x1B[1m%s\x1B[22m \x1B[90m%s\x1B[39m',
+  'GET',
+  '/aa'
+]
+[2025-04-02T09:44:25.041] [INFO] default - 22222222222   [90m-->[39m [1mGET[22m [90m/aa[39m [32m200[39m [90m10ms[39m [90m10b[39m [
+  '  \x1B[90m-->\x1B[39m \x1B[1m%s\x1B[22m \x1B[90m%s\x1B[39m \x1B[32m%s\x1B[39m \x1B[90m%s\x1B[39m \x1B[90m%s\x1B[39m',
+  'GET',
+  '/aa',
+  200,
+  '10ms',
+  '10b'
+]
+[2025-04-02T09:44:26.816] [INFO] default - 22222222222   [90m<--[39m [1mGET[22m [90m/aa[39m [
+  '  \x1B[90m<--\x1B[39m \x1B[1m%s\x1B[22m \x1B[90m%s\x1B[39m',
+  'GET',
+  '/aa'
+]
+[2025-04-02T09:44:26.819] [INFO] default - 22222222222   [90m-->[39m [1mGET[22m [90m/aa[39m [32m200[39m [90m3ms[39m [90m10b[39m [
+  '  \x1B[90m-->\x1B[39m \x1B[1m%s\x1B[22m \x1B[90m%s\x1B[39m \x1B[32m%s\x1B[39m \x1B[90m%s\x1B[39m \x1B[90m%s\x1B[39m',
+  'GET',
+  '/aa',
+  200,
+  '3ms',
+  '10b'
+]
+[2025-04-02T09:45:19.489] [DEBUG] default - Some debug messages
+[2025-04-02T09:45:19.490] [INFO] default - Some info messages
+[2025-04-02T09:45:19.491] [WARN] default - Some warn messages
+[2025-04-02T09:45:19.491] [ERROR] default - Some error messages
+[2025-04-02T09:45:19.492] [INFO] default - log4js.getLogger() aaaaaaaaaaaaaaaaaaaaaaaaa
+[2025-04-02T09:45:21.970] [INFO] default -   [90m<--[39m [1mGET[22m [90m/aa[39m
+[2025-04-02T09:45:21.976] [INFO] default -   [90m-->[39m [1mGET[22m [90m/aa[39m [32m200[39m [90m6ms[39m [90m10b[39m
+[2025-04-02T09:46:17.447] [DEBUG] default - Some debug messages
+[2025-04-02T09:46:17.447] [INFO] default - Some info messages
+[2025-04-02T09:46:17.448] [WARN] default - Some warn messages
+[2025-04-02T09:46:17.448] [ERROR] default - Some error messages
+[2025-04-02T09:46:17.449] [INFO] default - log4js.getLogger() aaaaaaaaaaaaaaaaaaaaaaaaa
+[2025-04-02T09:46:36.300] [INFO] default -   [90m<--[39m [1mGET[22m [90m/a[39m
+[2025-04-02T09:46:36.307] [INFO] default -   [90m-->[39m [1mGET[22m [90m/a[39m [32m200[39m [90m8ms[39m [90m3b[39m
+[2025-04-02T09:47:06.528] [DEBUG] default - Some debug messages
+[2025-04-02T09:47:06.529] [INFO] default - Some info messages
+[2025-04-02T09:47:06.529] [WARN] default - Some warn messages
+[2025-04-02T09:47:06.530] [ERROR] default - Some error messages
+[2025-04-02T09:47:06.530] [INFO] default - log4js.getLogger() aaaaaaaaaaaaaaaaaaaaaaaaa
+[2025-04-02T09:47:08.895] [INFO] default -   [90m<--[39m [1mGET[22m [90m/a[39m   [90m<--[39m [1m%s[22m [90m%s[39m GET /a
+[2025-04-02T09:47:08.903] [INFO] default -   [90m-->[39m [1mGET[22m [90m/a[39m [32m200[39m [90m8ms[39m [90m3b[39m   [90m-->[39m [1m%s[22m [90m%s[39m [32m%s[39m [90m%s[39m [90m%s[39m GET /a 200 8ms 3b
+[2025-04-02T09:55:05.866] [INFO] default -   [90m<--[39m [1mGET[22m [90m/aa[39m   [90m<--[39m [1m%s[22m [90m%s[39m GET /aa
+[2025-04-02T09:55:05.868] [INFO] default -   [90m-->[39m [1mGET[22m [90m/aa[39m [32m200[39m [90m2ms[39m [90m10b[39m   [90m-->[39m [1m%s[22m [90m%s[39m [32m%s[39m [90m%s[39m [90m%s[39m GET /aa 200 2ms 10b
+[2025-04-02T09:56:23.788] [INFO] default -   [90m<--[39m [1mGET[22m [90m/aa[39m   [90m<--[39m [1m%s[22m [90m%s[39m GET /aa
+[2025-04-02T09:56:23.790] [INFO] default -   [90m-->[39m [1mGET[22m [90m/aa[39m [32m200[39m [90m2ms[39m [90m10b[39m   [90m-->[39m [1m%s[22m [90m%s[39m [32m%s[39m [90m%s[39m [90m%s[39m GET /aa 200 2ms 10b
+[2025-04-02T10:04:56.313] [DEBUG] default - Some debug messages
+[2025-04-02T10:04:56.316] [INFO] default - Some info messages
+[2025-04-02T10:04:56.316] [WARN] default - Some warn messages
+[2025-04-02T10:04:56.317] [ERROR] default - Some error messages
+[2025-04-02T10:04:56.317] [INFO] default - log4js.getLogger() aaaaaaaaaaaaaaaaaaaaaaaaa
+[2025-04-02T10:05:20.575] [DEBUG] default - Some debug messages
+[2025-04-02T10:05:20.577] [INFO] default - Some info messages
+[2025-04-02T10:05:20.578] [WARN] default - Some warn messages
+[2025-04-02T10:05:20.578] [ERROR] default - Some error messages
+[2025-04-02T10:05:20.578] [INFO] default - log4js.getLogger() aaaaaaaaaaaaaaaaaaaaaaaaa
+[2025-04-02T10:07:09.443] [DEBUG] default - Some debug messages
+[2025-04-02T10:07:09.446] [INFO] default - Some info messages
+[2025-04-02T10:07:09.446] [WARN] default - Some warn messages
+[2025-04-02T10:07:09.446] [ERROR] default - Some error messages
+[2025-04-02T10:07:09.447] [INFO] default - log4js.getLogger() aaaaaaaaaaaaaaaaaaaaaaaaa
+[2025-04-02T10:07:22.884] [INFO] default -   [90m<--[39m [1mGET[22m [90m/aa[39m   [90m<--[39m [1m%s[22m [90m%s[39m GET /aa
+[2025-04-02T10:07:22.894] [INFO] default -   [90m-->[39m [1mGET[22m [90m/aa[39m [32m200[39m [90m10ms[39m [90m10b[39m   [90m-->[39m [1m%s[22m [90m%s[39m [32m%s[39m [90m%s[39m [90m%s[39m GET /aa 200 10ms 10b
+[2025-04-02T10:19:51.624] [INFO] default -   [90m<--[39m [1mGET[22m [90m/a[39m   [90m<--[39m [1m%s[22m [90m%s[39m GET /a
+[2025-04-02T10:19:51.634] [INFO] default -   [90m-->[39m [1mGET[22m [90m/a[39m [32m200[39m [90m9ms[39m [90m3b[39m   [90m-->[39m [1m%s[22m [90m%s[39m [32m%s[39m [90m%s[39m [90m%s[39m GET /a 200 9ms 3b
+[2025-04-02T10:20:12.935] [DEBUG] default - Some debug messages
+[2025-04-02T10:20:12.937] [INFO] default - Some info messages
+[2025-04-02T10:20:12.937] [WARN] default - Some warn messages
+[2025-04-02T10:20:12.938] [ERROR] default - Some error messages
+[2025-04-02T10:20:12.938] [INFO] default - log4js.getLogger() aaaaaaaaaaaaaaaaaaaaaaaaa
+[2025-04-02T10:20:15.604] [INFO] default -   [90m<--[39m [1mGET[22m [90m/a[39m
+[2025-04-02T10:20:15.619] [INFO] default -   [90m-->[39m [1mGET[22m [90m/a[39m [32m200[39m [90m16ms[39m [90m3b[39m
+[2025-04-02T10:49:07.874] [DEBUG] default - Some debug messages
+[2025-04-02T10:49:07.877] [INFO] default - Some info messages
+[2025-04-02T10:49:07.877] [WARN] default - Some warn messages
+[2025-04-02T10:49:07.878] [ERROR] default - Some error messages
+[2025-04-02T10:49:07.878] [INFO] default - log4js.getLogger() aaaaaaaaaaaaaaaaaaaaaaaaa
+[2025-04-02T11:29:29.182] [DEBUG] default - Some debug messages
+[2025-04-02T11:29:29.185] [INFO] default - Some info messages
+[2025-04-02T11:29:29.185] [WARN] default - Some warn messages
+[2025-04-02T11:29:29.185] [ERROR] default - Some error messages
+[2025-04-02T11:29:29.186] [INFO] default - log4js.getLogger() aaaaaaaaaaaaaaaaaaaaaaaaa
+[2025-04-02T11:31:05.884] [DEBUG] default - Some debug messages
+[2025-04-02T11:31:05.889] [INFO] default - Some info messages
+[2025-04-02T11:31:05.890] [WARN] default - Some warn messages
+[2025-04-02T11:31:05.891] [ERROR] default - Some error messages
+[2025-04-02T11:31:05.893] [INFO] default - log4js.getLogger() aaaaaaaaaaaaaaaaaaaaaaaaa
+[2025-04-02T13:22:23.711] [INFO] default -   [90m<--[39m [1mGET[22m [90m/a[39m
+[2025-04-02T13:22:23.719] [INFO] default -   [90m-->[39m [1mGET[22m [90m/a[39m [32m200[39m [90m9ms[39m [90m3b[39m
+[2025-04-02T13:26:07.189] [DEBUG] default - Some debug messages
+[2025-04-02T13:26:07.192] [INFO] default - Some info messages
+[2025-04-02T13:26:07.192] [WARN] default - Some warn messages
+[2025-04-02T13:26:07.193] [ERROR] default - Some error messages
+[2025-04-02T13:26:07.193] [INFO] default - log4js.getLogger() aaaaaaaaaaaaaaaaaaaaaaaaa
+[2025-04-02T13:26:09.060] [INFO] default -   [90m<--[39m [1mGET[22m [90m/a[39m
+[2025-04-02T13:26:09.070] [INFO] default -   [90m-->[39m [1mGET[22m [90m/a[39m [32m200[39m [90m9ms[39m [90m3b[39m
+[2025-04-02T13:26:43.201] [DEBUG] default - Some debug messages
+[2025-04-02T13:26:43.272] [INFO] default - Some info messages
+[2025-04-02T13:26:43.273] [WARN] default - Some warn messages
+[2025-04-02T13:26:43.274] [ERROR] default - Some error messages
+[2025-04-02T13:26:43.274] [INFO] default - log4js.getLogger() aaaaaaaaaaaaaaaaaaaaaaaaa
+[2025-04-02T13:26:47.046] [INFO] default -   [90m<--[39m [1mGET[22m [90m/a[39m
+[2025-04-02T13:26:47.055] [INFO] default -   [90m-->[39m [1mGET[22m [90m/a[39m [32m200[39m [90m10ms[39m [90m3b[39m
+[2025-04-02T13:30:03.373] [DEBUG] default - Some debug messages
+[2025-04-02T13:30:03.418] [INFO] default - Some info messages
+[2025-04-02T13:30:03.419] [WARN] default - Some warn messages
+[2025-04-02T13:30:03.419] [ERROR] default - Some error messages
+[2025-04-02T13:30:03.420] [INFO] default - log4js.getLogger() aaaaaaaaaaaaaaaaaaaaaaaaa
+[2025-04-02T13:30:35.541] [INFO] default -   [90m<--[39m [1mGET[22m [90m/a[39m
+[2025-04-02T13:30:35.549] [INFO] default -   [90m-->[39m [1mGET[22m [90m/a[39m [32m200[39m [90m8ms[39m [90m3b[39m
+[2025-04-02T13:48:15.159] [DEBUG] default - Some debug messages
+[2025-04-02T13:48:15.162] [INFO] default - Some info messages
+[2025-04-02T13:48:15.162] [WARN] default - Some warn messages
+[2025-04-02T13:48:15.163] [ERROR] default - Some error messages
+[2025-04-02T13:48:15.164] [INFO] default - log4js.getLogger() aaaaaaaaaaaaaaaaaaaaaaaaa
+[2025-04-02T14:29:58.412] [DEBUG] default - Some debug messages
+[2025-04-02T14:29:58.415] [INFO] default - Some info messages
+[2025-04-02T14:29:58.416] [WARN] default - Some warn messages
+[2025-04-02T14:29:58.416] [ERROR] default - Some error messages
+[2025-04-02T14:29:58.416] [INFO] default - log4js.getLogger() aaaaaaaaaaaaaaaaaaaaaaaaa
+[2025-04-02T14:30:06.925] [INFO] default -   [90m<--[39m [1mGET[22m [90m/a[39m
+[2025-04-02T14:30:06.937] [INFO] default -   [90m-->[39m [1mGET[22m [90m/a[39m [32m200[39m [90m11ms[39m [90m3b[39m
+[2025-04-02T14:31:37.426] [DEBUG] default - Some debug messages
+[2025-04-02T14:31:37.429] [INFO] default - Some info messages
+[2025-04-02T14:31:37.430] [WARN] default - Some warn messages
+[2025-04-02T14:31:37.430] [ERROR] default - Some error messages
+[2025-04-02T14:31:37.430] [INFO] default - log4js.getLogger() aaaaaaaaaaaaaaaaaaaaaaaaa
+[2025-04-02T14:31:40.336] [INFO] default -   [90m<--[39m [1mGET[22m [90m/a[39m
+[2025-04-02T14:31:40.343] [INFO] default -   [90m-->[39m [1mGET[22m [90m/a[39m [32m200[39m [90m7ms[39m [90m3b[39m
+[2025-04-02T14:31:58.917] [DEBUG] default - Some debug messages
+[2025-04-02T14:31:58.923] [INFO] default - Some info messages
+[2025-04-02T14:31:58.924] [WARN] default - Some warn messages
+[2025-04-02T14:31:58.924] [ERROR] default - Some error messages
+[2025-04-02T14:31:58.925] [INFO] default - log4js.getLogger() aaaaaaaaaaaaaaaaaaaaaaaaa
+[2025-04-02T14:32:01.336] [INFO] default -   [90m<--[39m [1mGET[22m [90m/a[39m
+[2025-04-02T14:32:01.344] [INFO] default -   [90m-->[39m [1mGET[22m [90m/a[39m [32m200[39m [90m9ms[39m [90m3b[39m
+[2025-04-02T14:32:19.360] [DEBUG] default - Some debug messages
+[2025-04-02T14:32:19.363] [INFO] default - Some info messages
+[2025-04-02T14:32:19.364] [WARN] default - Some warn messages
+[2025-04-02T14:32:19.365] [ERROR] default - Some error messages
+[2025-04-02T14:32:19.365] [INFO] default - log4js.getLogger() aaaaaaaaaaaaaaaaaaaaaaaaa
+[2025-04-02T14:32:22.173] [INFO] default -   [90m<--[39m [1mGET[22m [90m/a[39m
+[2025-04-02T14:32:22.183] [INFO] default -   [90m-->[39m [1mGET[22m [90m/a[39m [32m200[39m [90m10ms[39m [90m3b[39m
+[2025-04-02T14:34:06.494] [DEBUG] default - Some debug messages
+[2025-04-02T14:34:06.497] [INFO] default - Some info messages
+[2025-04-02T14:34:06.498] [WARN] default - Some warn messages
+[2025-04-02T14:34:06.498] [ERROR] default - Some error messages
+[2025-04-02T14:34:06.498] [INFO] default - log4js.getLogger() aaaaaaaaaaaaaaaaaaaaaaaaa
+[2025-04-02T14:57:23.565] [DEBUG] default - Some debug messages
+[2025-04-02T14:57:23.568] [INFO] default - Some info messages
+[2025-04-02T14:57:23.569] [WARN] default - Some warn messages
+[2025-04-02T14:57:23.570] [ERROR] default - Some error messages
+[2025-04-02T14:57:23.570] [INFO] default - log4js.getLogger() aaaaaaaaaaaaaaaaaaaaaaaaa
+[2025-04-02T14:57:39.962] [DEBUG] default - Some debug messages
+[2025-04-02T14:57:39.964] [INFO] default - Some info messages
+[2025-04-02T14:57:39.965] [WARN] default - Some warn messages
+[2025-04-02T14:57:39.966] [ERROR] default - Some error messages
+[2025-04-02T14:57:39.966] [INFO] default - log4js.getLogger() aaaaaaaaaaaaaaaaaaaaaaaaa
+[2025-04-02T14:58:03.591] [DEBUG] default - Some debug messages
+[2025-04-02T14:58:03.594] [INFO] default - Some info messages
+[2025-04-02T14:58:03.595] [WARN] default - Some warn messages
+[2025-04-02T14:58:03.595] [ERROR] default - Some error messages
+[2025-04-02T14:58:03.596] [INFO] default - log4js.getLogger() aaaaaaaaaaaaaaaaaaaaaaaaa
+[2025-04-02T14:58:35.978] [DEBUG] default - Some debug messages
+[2025-04-02T14:58:35.981] [INFO] default - Some info messages
+[2025-04-02T14:58:35.982] [WARN] default - Some warn messages
+[2025-04-02T14:58:35.982] [ERROR] default - Some error messages
+[2025-04-02T14:58:35.982] [INFO] default - log4js.getLogger() aaaaaaaaaaaaaaaaaaaaaaaaa
+[2025-04-02T14:58:51.048] [INFO] default -   [90m<--[39m [1mGET[22m [90m/a[39m
+[2025-04-02T14:58:51.057] [INFO] default -   [90m-->[39m [1mGET[22m [90m/a[39m [32m200[39m [90m8ms[39m [90m3b[39m
+[2025-04-02T15:36:24.553] [DEBUG] default - Some debug messages
+[2025-04-02T15:36:24.556] [INFO] default - Some info messages
+[2025-04-02T15:36:24.557] [WARN] default - Some warn messages
+[2025-04-02T15:36:24.558] [ERROR] default - Some error messages
+[2025-04-02T15:36:24.558] [INFO] default - log4js.getLogger() aaaaaaaaaaaaaaaaaaaaaaaaa
+[2025-04-02T15:39:16.801] [DEBUG] default - Some debug messages
+[2025-04-02T15:39:16.803] [INFO] default - Some info messages
+[2025-04-02T15:39:16.804] [WARN] default - Some warn messages
+[2025-04-02T15:39:16.804] [ERROR] default - Some error messages
+[2025-04-02T15:39:16.805] [INFO] default - log4js.getLogger() aaaaaaaaaaaaaaaaaaaaaaaaa
+[2025-04-02T15:39:59.895] [DEBUG] default - Some debug messages
+[2025-04-02T15:39:59.897] [INFO] default - Some info messages
+[2025-04-02T15:39:59.899] [WARN] default - Some warn messages
+[2025-04-02T15:39:59.899] [ERROR] default - Some error messages
+[2025-04-02T15:39:59.900] [INFO] default - log4js.getLogger() aaaaaaaaaaaaaaaaaaaaaaaaa
+[2025-04-02T15:40:14.890] [INFO] default -   [90m<--[39m [1mGET[22m [90m/a[39m   [90m<--[39m [1m%s[22m [90m%s[39m GET /a
+[2025-04-02T15:40:14.896] [INFO] default -   [90m-->[39m [1mGET[22m [90m/a[39m [32m200[39m [90m7ms[39m [90m3b[39m   [90m-->[39m [1m%s[22m [90m%s[39m [32m%s[39m [90m%s[39m [90m%s[39m GET /a 200 7ms 3b
+[2025-04-02T15:41:15.626] [DEBUG] default - Some debug messages
+[2025-04-02T15:41:15.629] [INFO] default - Some info messages
+[2025-04-02T15:41:15.630] [WARN] default - Some warn messages
+[2025-04-02T15:41:15.630] [ERROR] default - Some error messages
+[2025-04-02T15:42:08.041] [DEBUG] default - Some debug messages
+[2025-04-02T15:42:08.044] [INFO] default - Some info messages
+[2025-04-02T15:42:08.045] [WARN] default - Some warn messages
+[2025-04-02T15:42:08.045] [ERROR] default - Some error messages
+[2025-04-02T15:42:33.862] [DEBUG] default - Some debug messages
+[2025-04-02T15:42:33.864] [INFO] default - Some info messages
+[2025-04-02T15:42:33.865] [WARN] default - Some warn messages
+[2025-04-02T15:42:33.865] [ERROR] default - Some error messages
+[2025-04-02T15:42:36.787] [DEBUG] default - Some debug messages
+[2025-04-02T15:42:36.791] [INFO] default - Some info messages
+[2025-04-02T15:42:36.792] [WARN] default - Some warn messages
+[2025-04-02T15:42:36.793] [ERROR] default - Some error messages
+[2025-04-02T15:45:36.290] [DEBUG] default - Some debug messages
+[2025-04-02T15:45:36.294] [INFO] default - Some info messages
+[2025-04-02T15:45:36.295] [WARN] default - Some warn messages
+[2025-04-02T15:45:36.295] [ERROR] default - Some error messages
+[2025-04-02T15:45:49.352] [DEBUG] default - Some debug messages
+[2025-04-02T15:45:49.356] [INFO] default - Some info messages
+[2025-04-02T15:45:49.356] [WARN] default - Some warn messages
+[2025-04-02T15:45:49.356] [ERROR] default - Some error messages
+[2025-04-02T15:47:45.731] [DEBUG] default - Some debug messages
+[2025-04-02T15:47:45.735] [INFO] default - Some info messages
+[2025-04-02T15:47:45.735] [WARN] default - Some warn messages
+[2025-04-02T15:47:45.736] [ERROR] default - Some error messages

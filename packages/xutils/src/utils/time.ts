@@ -7,10 +7,10 @@ import moment from 'moment'
  * @param off 时区偏移（单位小时）
  * @returns 
  */
-function getTimeStr(timestamp, formate = "YYYY/MM/DD HH:mm:ss", off) {
+function getTimeStr(timestamp, formate = "YYYY/MM/DD HH:mm:ss", offset) {
   return timestamp
     ? moment(timestamp)
-      .utcOffset(off * 60)
+      .utcOffset(offset * 60)
       .format(formate)
     : "";
 }

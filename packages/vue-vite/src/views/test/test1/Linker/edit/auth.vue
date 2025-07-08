@@ -110,7 +110,7 @@ const forms = reactive([])
 const activeStep = ref(1)
 // 公式编辑
 const FormulaEditorVisible = ref(false)
-const fieldData = reactive([{key: 'a'}, {key: 'b'}])
+const fieldData = reactive([{key: 'a'}, {key: 'b'}, {key: 'c'}, {key: 'dd'}])
 
 /********** 底部操作 **********/
 // 【上一步】

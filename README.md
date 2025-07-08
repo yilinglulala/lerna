@@ -30,3 +30,7 @@
 
 
 
+# 新建一个项目
+1. packages 新建目录 my-project
+2. cd packages/my-project
+3. npm init -y

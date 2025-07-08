@@ -16,15 +16,15 @@
     </el-menu-item>
     <el-sub-menu index="2">
       <template #title>小工具</template>
-      <el-menu-item index="tableCan">
+      <!-- <el-menu-item index="tableCan">
         <router-link to="/tableCan">tableCan</router-link>
-      </el-menu-item>
-      <el-menu-item index="pdf">
-        <router-link to="/pdf">pdf</router-link>
+      </el-menu-item> -->
+      <el-menu-item v-for="item in toolRoutes" :index="item.name">
+        <router-link :to="item.path">{{ item.name }}</router-link>
       </el-menu-item>
       <!-- <el-menu-item index="2-2">item two</el-menu-item>
-      <el-menu-item index="2-3">item three</el-menu-item>
-      <el-sub-menu index="2-4">
+      <el-menu-item index="2-3">item three</el-menu-item> -->
+      <!-- <el-sub-menu index="2-4">
         <template #title>item four</template>
         <el-menu-item index="2-4-1">item one</el-menu-item>
         <el-menu-item index="2-4-2">item two</el-menu-item>
@@ -36,7 +36,6 @@
       <el-menu-item index="3-1">
         <router-link to="/tableCan">tableCan</router-link>
       </el-menu-item>
-      
     </el-sub-menu>
   </el-menu>
 </template>
@@ -44,12 +43,15 @@
 <script lang="ts" setup>
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
-import router from '@/router/index'
+import router from '@/router/index.ts'
+import { routes } from '../../router'
+const toolRoutes = routes.find((route) => route.meta?.isTool)?.children
+
 const activeIndex = ref('1')
 const handleSelect = (key: string, keyPath: string) => {
   console.log(key, keyPath)
   // const router = useRouter()
-  router.push({name: key})
+  router.push({ name: key })
 }
 </script>
 

@@ -1,6 +1,6 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
 // import Nav from '../views/nav.vue'
-const routes = [
+export const routes = [
   {
     path: '/buildBlocks',
     name: 'buildBlocks',
@@ -29,7 +29,10 @@ const routes = [
   {
     path: '/',
     component: () => import('../views/nav.vue'),
-    redirect: '/',
+    redirect: '/tablecan',
+    meta: {
+      isTool: true
+    },
     children: [
       {
         path: '/i18n',
@@ -50,6 +53,11 @@ const routes = [
         path: '/pdf',
         name: 'pdf',
         component: () => import('../views/smallTool/pdf/index.vue'),
+      },
+      {
+        path: '/topo',
+        name: 'topo',
+        component: () => import('../views/smallTool/topo/index.vue'),
       },
     ],
   },
